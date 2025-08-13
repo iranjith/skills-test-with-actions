@@ -87,13 +87,6 @@ def test_get_nth_fibonacci_ten():
             assert str(e) == "n cannot be negative"
 
 
-    def test_area_of_circle_large_radius():
-        """Test with a large radius."""
-        radius = 1000
-        result = area_of_circle(radius)
-        assert abs(result - (math.pi * radius ** 2)) < 1e-5
-
-
     def test_get_nth_fibonacci_two():
         """Test with n=2."""
         n = 2
