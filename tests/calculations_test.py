@@ -67,22 +67,42 @@ def test_get_nth_fibonacci_ten():
     result = get_nth_fibonacci(n)
 
     # Assert
-    assert result == 55
+    def test_area_of_circle_negative_radius():
+        """Test with a negative radius (should raise ValueError)."""
+        radius = -1
+        try:
+            area_of_circle(radius)
+            assert False, "Expected ValueError"
+        except ValueError as e:
+            assert str(e) == "Radius cannot be negative"
 
-def test_area_of_circle_negative_radius(self):
-   """Test with a negative radius to raise ValueError."""
-   # Arrange
-   radius = -1
 
-   # Act & Assert
-   with self.assertRaises(ValueError):
-      area_of_circle(radius)
+    def test_get_nth_fibonacci_negative():
+        """Test with negative n (should raise ValueError)."""
+        n = -5
+        try:
+            get_nth_fibonacci(n)
+            assert False, "Expected ValueError"
+        except ValueError as e:
+            assert str(e) == "n cannot be negative"
 
-def test_get_nth_fibonacci_negative(self):
-   """Test with a negative number to raise ValueError."""
-   # Arrange
-   n = -1
 
-   # Act & Assert
-   with self.assertRaises(ValueError):
-      get_nth_fibonacci(n)
+    def test_area_of_circle_large_radius():
+        """Test with a large radius."""
+        radius = 1000
+        result = area_of_circle(radius)
+        assert abs(result - (math.pi * radius ** 2)) < 1e-5
+
+
+    def test_get_nth_fibonacci_two():
+        """Test with n=2."""
+        n = 2
+        result = get_nth_fibonacci(n)
+        assert result == 1
+
+
+    def test_get_nth_fibonacci_large_n():
+        """Test with a large n."""
+        n = 20
+        result = get_nth_fibonacci(n)
+        assert result == 6765
