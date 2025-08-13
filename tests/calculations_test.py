@@ -99,3 +99,23 @@ def test_get_nth_fibonacci_ten():
         n = 20
         result = get_nth_fibonacci(n)
         assert result == 6765
+
+
+    def test_get_nth_fibonacci_three():
+        """Test with n=3."""
+        n = 3
+        result = get_nth_fibonacci(n)
+        assert result == 2
+
+    def test_get_nth_fibonacci_five():
+        """Test with n=5."""
+        n = 5
+        result = get_nth_fibonacci(n)
+        assert result == 5
+
+    def test_get_nth_fibonacci_large():
+        """Test with a very large n."""
+        n = 50
+        result = get_nth_fibonacci(n)
+        assert result == 12586269025
+
